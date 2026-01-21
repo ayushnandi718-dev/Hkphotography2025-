@@ -44,7 +44,6 @@
             filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
         }
 
-        /* Initial Transparent Header State */
         .transparent-header {
             background: transparent;
             backdrop-filter: blur(0px);
@@ -53,7 +52,6 @@
             box-shadow: none;
         }
 
-        /* Animations */
         @keyframes subtleZoom {
             0% { transform: scale(1); }
             100% { transform: scale(1.1); }
@@ -80,12 +78,10 @@
         .animate-delay-3 { animation: fadeInUp 1s ease forwards 0.6s; opacity: 0; }
         .animate-delay-4 { animation: fadeInUp 1s ease forwards 0.8s; opacity: 0; }
 
-        /* Navigation Enhancements */
         nav {
             transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
-        /* Scrolled state with Glassmorphism */
         nav.scrolled {
             background: rgba(7, 7, 7, 0.75);
             backdrop-filter: blur(20px);
@@ -117,7 +113,6 @@
             width: 100%;
         }
 
-        /* Hero Text Specifics - Fluid fitting */
         .hero-title-container {
             width: 100%;
             max-width: 100vw;
@@ -129,7 +124,6 @@
         }
 
         .hero-title {
-            /* Decreased from 11vw to 9vw and max from 120px to 95px */
             font-size: clamp(2rem, 9vw, 95px);
             white-space: nowrap;
             display: inline-block;
@@ -137,7 +131,6 @@
             letter-spacing: -0.01em;
         }
 
-        /* Portfolio Gallery */
         .photo-card {
             position: relative;
             overflow: hidden;
@@ -164,7 +157,6 @@
             background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, transparent 60%);
         }
 
-        /* Founders Section Styling */
         .founders-section {
             position: relative;
             padding: 60px 0;
@@ -225,6 +217,8 @@
             height: 100px;
             border-radius: 20px;
             object-fit: cover;
+            /* Focus on the face/upper part of the image */
+            object-position: center 20%; 
             margin-bottom: 20px;
             border: 2px solid rgba(255,255,255,0.1);
             transition: all 0.6s ease;
@@ -236,7 +230,6 @@
             filter: grayscale(0%);
         }
 
-        /* Carousel Universal Styles */
         .carousel-container {
             position: relative;
             overflow: hidden;
@@ -273,7 +266,6 @@
             transform: translateX(0);
         }
 
-        /* Specific Carousel Sizes */
         .quotes-container { height: 380px; }
         .images-container { height: 400px; }
         @media (min-width: 768px) { .images-container { height: 600px; } }
@@ -285,7 +277,6 @@
             filter: brightness(0.5);
         }
 
-        /* Custom Scrollbar */
         ::-webkit-scrollbar { width: 4px; }
         ::-webkit-scrollbar-track { background: #0a0a0a; }
         ::-webkit-scrollbar-thumb { background: #444; }
@@ -295,13 +286,11 @@
 </head>
 <body class="antialiased">
 
-    <!-- Nav: Starts as Transparent, transitions to glass on scroll -->
     <nav id="mainNav" class="fixed top-0 w-full z-50 px-6 md:px-12 py-8 flex justify-between items-center transparent-header">
         <div class="text-xl md:text-2xl font-bold tracking-tighter uppercase cursor-pointer" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
             hkphotography2025
         </div>
         
-        <!-- Desktop Menu -->
         <div class="hidden md:flex items-center space-x-8 lg:space-x-10 text-[10px] uppercase tracking-[0.4em] font-medium">
             <a href="#home" class="nav-link">Home</a>
             <a href="#work" class="nav-link">Works</a>
@@ -318,13 +307,11 @@
             </a>
         </div>
 
-        <!-- Mobile Menu Toggle -->
         <button id="mobileMenuBtn" class="md:hidden text-white text-2xl focus:outline-none p-2 hover:opacity-70 transition-opacity">
             <i class="fa-solid fa-bars-staggered"></i>
         </button>
     </nav>
 
-    <!-- Mobile Navigation Overlay -->
     <div id="mobileMenu" class="fixed inset-0 z-[60] bg-black translate-x-full transition-transform duration-500 flex flex-col items-center justify-center space-y-10 md:hidden">
         <button id="closeMenuBtn" class="absolute top-8 right-8 text-4xl text-white font-light">&times;</button>
         <a href="#home" class="text-3xl font-light tracking-[0.2em] uppercase hover:text-[#f6d365] transition-colors">Home</a>
@@ -337,7 +324,6 @@
         </a>
     </div>
 
-    <!-- Hero -->
     <header id="home" class="relative min-h-screen flex flex-col items-center justify-center text-center px-4 md:px-6 overflow-hidden">
         <div class="absolute inset-0 bg-black -z-10">
             <img src="https://images.unsplash.com/photo-1493863641943-9b68992a8d07?auto=format&fit=crop&q=80&w=2000" class="w-full h-full object-cover opacity-30 grayscale scale-110" style="animation: subtleZoom 30s infinite alternate;" alt="hero bg">
@@ -377,7 +363,6 @@
         </div>
     </header>
 
-    <!-- Visual Showcase Carousel -->
     <section class="py-12 bg-black border-y border-white/5">
         <div class="text-center mb-8 md:mb-12 reveal px-4">
             <span class="text-[9px] uppercase tracking-[0.5em] text-gray-500">The Collection</span>
@@ -408,7 +393,6 @@
         </div>
     </section>
 
-    <!-- Captured Works Grid -->
     <section id="work" class="py-16 md:py-24 px-4 md:px-6 bg-[#0f0f0f]">
         <div class="max-w-7xl mx-auto">
             <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 md:mb-16 reveal">
@@ -449,7 +433,6 @@
         </div>
     </section>
 
-    <!-- Founders Section -->
     <section id="founders" class="founders-section">
         <div class="founders-bg-media">
             <img src="https://images.unsplash.com/photo-1478720568477-152d9b164e26?auto=format&fit=crop&q=80&w=2000" alt="Camera bg">
@@ -461,7 +444,6 @@
                 <h2 class="text-3xl md:text-4xl font-light">Meet The Founders</h2>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
-                <!-- Founder 1 -->
                 <div class="reveal founder-card group cursor-pointer">
                     <img src="https://raw.githubusercontent.com/ayushnandi718-dev/Ayush-Nandi/main/IMG-20251226-WA0100.jpg" alt="Ayush Nandi" class="founder-image grayscale group-hover:grayscale-0 transition-all duration-700">
                     <h3 class="text-2xl md:text-3xl mb-1 group-hover:text-[#f6d365] transition-colors">Ayush Nandi</h3>
@@ -474,9 +456,8 @@
                         </a>
                     </div>
                 </div>
-                <!-- Founder 2 -->
                 <div class="reveal founder-card group cursor-pointer">
-                    <img src="https://github.com/ayushnandi718-dev/Hkphotography2025-/blob/main/Screenshot_20260121_112329_Instagram.jpg" alt="Dibendu Chakraborty" class="founder-image grayscale group-hover:grayscale-0 transition-all duration-700">
+                    <img src="https://raw.githubusercontent.com/ayushnandi718-dev/Hkphotography2025-/main/Screenshot_20260121_112329_Instagram.jpg" alt="Dibendu Chakraborty" class="founder-image grayscale group-hover:grayscale-0 transition-all duration-700">
                     <h3 class="text-2xl md:text-3xl mb-1 group-hover:text-[#f6d365] transition-colors">Dibendu Chakraborty</h3>
                     <p class="text-[9px] md:text-[11px] text-gray-500 tracking-[0.2em] md:tracking-[0.3em] uppercase mb-3">Founder / Creative Strategist</p>
                     <p class="text-xs md:text-sm text-gray-400 font-light mb-6 leading-relaxed italic">"Architect of visual storytelling and brand aesthetics."</p>
@@ -486,7 +467,6 @@
         </div>
     </section>
 
-    <!-- Quotes Carousel -->
     <section class="py-24 bg-[#050505] overflow-hidden">
         <div class="carousel-container quotes-container max-w-4xl mx-auto">
             <div id="quoteTrack" class="carousel-track">
@@ -524,7 +504,6 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <footer id="contact" class="py-16 md:py-24 px-6 md:px-8 bg-black border-t border-white/5">
         <div class="max-w-7xl mx-auto">
             <div class="flex flex-col md:flex-row justify-between items-center gap-10 md:gap-12 mb-12 md:mb-16">
@@ -547,7 +526,6 @@
     </footer>
 
     <script>
-        // Navigation Scroll Effect
         const nav = document.getElementById('mainNav');
         window.addEventListener('scroll', () => {
             if (window.scrollY > 100) {
@@ -559,7 +537,6 @@
             }
         });
 
-        // Mobile Menu Logic
         const mobileMenuBtn = document.getElementById('mobileMenuBtn');
         const closeMenuBtn = document.getElementById('closeMenuBtn');
         const mobileMenu = document.getElementById('mobileMenu');
@@ -579,7 +556,6 @@
         closeMenuBtn.onclick = () => toggleMenu(false);
         mobileLinks.forEach(link => link.onclick = () => toggleMenu(false));
 
-        // Reveal animations on scroll
         function reveal() {
             const reveals = document.querySelectorAll(".reveal");
             reveals.forEach(el => {
@@ -589,7 +565,6 @@
         }
         window.addEventListener("scroll", reveal);
 
-        // Carousel Logic
         function initCarousel(trackId, dotId, interval) {
             const track = document.getElementById(trackId);
             const slides = track.querySelectorAll('.slide-item');
@@ -621,7 +596,6 @@
             initCarousel('quoteTrack', 'quoteDots', 5000);
         };
 
-        // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 const href = this.getAttribute('href');
@@ -629,7 +603,6 @@
                     e.preventDefault();
                     const target = document.querySelector(href);
                     if (target) {
-                        // Offset for sticky header
                         const offset = 80;
                         const bodyRect = document.body.getBoundingClientRect().top;
                         const elementRect = target.getBoundingClientRect().top;
@@ -647,3 +620,4 @@
     </script>
 </body>
 </html>
+
